@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -12,28 +13,32 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
-    // Observer for revealing elements on scroll
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
+      // Observer for revealing elements on scroll
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
 
-    // Observe all elements with the 'reveal' class
-    document.querySelectorAll(".reveal").forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => {
-      document.querySelectorAll(".reveal").forEach((el) => {
-        observer.unobserve(el);
+      // Observe all elements with the 'reveal' class
+      const revealElements = document.querySelectorAll(".reveal");
+      revealElements.forEach((el) => {
+        observer.observe(el);
       });
-    };
+
+      // Cleanup observer on component unmount
+      return () => {
+        revealElements.forEach((el) => {
+          observer.unobserve(el);
+        });
+      };
+    }
   }, []);
 
   return (

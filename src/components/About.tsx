@@ -1,4 +1,3 @@
-
 export default function About() {
   return (
     <section id="about" className="section-padding bg-white">
@@ -16,7 +15,7 @@ export default function About() {
           </p>
           
           <p className="text-lg text-gray-700 mb-6">
-            With a strong foundation in PHP, JavaScript, and Node.js, I've successfully delivered complex projects across 
+            With a strong foundation in PHP, JavaScript, and Node.js, I&#39;ve successfully delivered complex projects across 
             various industries. I specialize in Magento development and Microsoft Power Platform implementation, helping 
             businesses streamline their operations and enhance their digital presence.
           </p>

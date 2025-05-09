@@ -1,24 +1,27 @@
-
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image"; // Import Next.js Image component
+import SkyPremiumImage from "@images/SkyPremium.png"; // Import your image here
+import LABFintechImage from "@images/LABFintech.jpg"; // Import your image here
+import SecondsDealsImage from "@images/SecondsDeals.jpg"; // Import your image here
 
 const projects = [
   {
     title: "Sky Premium (Magento EE)",
     description: "Developed mobile API, implemented CRM synchronization, built GraphQL endpoints, and integrated OneSignal push notifications.",
-    image: "https://placehold.co/600x400/3b82f6/FFFFFF?text=Sky+Premium",
+    image: SkyPremiumImage,
     technologies: ["Magento EE", "GraphQL", "OneSignal", "API Integration"],
   },
   {
     title: "LAB Fintech",
     description: "Built Power Platform solutions including BI dashboards and automated workflows for financial operations.",
-    image: "https://placehold.co/600x400/4f46e5/FFFFFF?text=LAB+Fintech",
+    image: LABFintechImage,
     technologies: ["Power Platform", "Power BI", "Power Automate", "Dashboard Design"],
   },
   {
     title: "Seconds Deals",
     description: "Integrated third-party shipping APIs and enhanced frontend experiences for an e-commerce platform.",
-    image: "https://placehold.co/600x400/10b981/FFFFFF?text=Seconds+Deals",
+    image: SecondsDealsImage,
     technologies: ["API Integration", "Frontend Enhancement", "E-commerce", "Shipping"],
   },
 ];
@@ -34,21 +37,25 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="overflow-hidden hover:shadow-lg transition-shadow duration-300 reveal"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
               <CardHeader>
                 <CardTitle className="text-navy-800">{project.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+                <CardDescription className="line-clamp-2">
+                  {project.description.replace("e-commerce platform's", "e-commerce platform&#39;s")}
+                </CardDescription>
               </CardHeader>
               <CardFooter className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, techIndex) => (

@@ -1,6 +1,18 @@
 {
   "name": "backend-developer-portfolio-main",
   "version": "0.1.0",
+  "homepage": "https://thangpham0906.github.io/VictorPham",
+  "description": "A portfolio website for a backend developer, showcasing projects, skills, and experience.",
+  "author": "Thang Pham",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "website",
+    "backend developer",
+    "projects",
+    "skills",
+    "experience"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

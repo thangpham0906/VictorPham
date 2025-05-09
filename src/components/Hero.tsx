@@ -1,6 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Download, Mail } from "lucide-react";
+import Image from "next/image"; // Import Next.js Image component
+import Avatar from "@images/avata.jpg"; // Adjust the path as necessary
 
 export default function Hero() {
   return (
@@ -13,7 +14,7 @@ export default function Hero() {
           <div className="w-full md:w-1/2 mb-10 md:mb-0">
             <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <h2 className="text-lg font-semibold text-blue-600 mb-2">
-                Hello, I'm
+                Hello, I&#39;m
               </h2>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-800 mb-4">
                 PHAM QUOC THANG
@@ -43,9 +44,11 @@ export default function Hero() {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 {/* Replace with actual profile image */}
-                <img
-                  src="https://placehold.co/400x400/3b82f6/FFFFFF?text=PQT"
+                <Image
+                  src={Avatar}
                   alt="PHAM QUOC THANG - Backend Developer"
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>
