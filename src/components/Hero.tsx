@@ -27,9 +27,11 @@ export default function Hero() {
                 Magento, and Microsoft Power Platform.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button className="flex items-center gap-2">
-                  <Download size={18} />
-                  Download CV
+                <Button asChild className="flex items-center gap-2">
+                  <a href="/PHAM_QUOC_THANG_CV.pdf" download>
+                    <Download size={18} />
+                    Download CV
+                  </a>
                 </Button>
                 <Button variant="outline" asChild>
                   <a href="#contact" className="flex items-center gap-2">

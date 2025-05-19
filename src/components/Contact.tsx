@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const { toast } = useToast();
@@ -27,12 +28,32 @@ export default function Contact() {
     e.preventDefault();
     // In a real app, you would handle form submission to a backend service here
     console.log("Form submitted:", formData);
-    
+
     toast({
       title: "Message sent!",
       description: "Thank you for your message. I'll get back to you soon.",
     });
-    
+
+    emailjs
+      .send(
+        'service_34uy9vf',     // Your Service ID
+        'template_51qynh8',   // Your Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        'UR2BIR7u4mnGFJvms'    // Your Public Key
+      )
+      .then(
+        (result) => {
+          console.log('Email sent successfully!');
+        },
+        (error) => {
+          console.log('Failed to send email: ' + error.text);
+        }
+      );
+
     // Reset form
     setFormData({
       name: "",
@@ -42,7 +63,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gray-50">
+    <section id="contact" className="section-padding bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-navy-800 mb-4">Contact Me</h2>
@@ -52,7 +73,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="reveal" style={{ transitionDelay: "0.1s" }}>
             <h3 className="text-xl font-semibold text-navy-800 mb-6">Get In Touch</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-full">
@@ -60,42 +81,42 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-medium text-navy-800">Email</h4>
-                  <a 
-                    href="mailto:thang.pham@example.com" 
+                  <a
+                    href="mailto:quocthangpham961997@gmail.com"
                     className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
-                    thang.pham@example.com
+                    quocthangpham961997@gmail.com
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-full">
                   <Phone className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                   <h4 className="font-medium text-navy-800">Phone</h4>
-                  <a 
-                    href="tel:+84123456789" 
+                  <a
+                    href="tel:+84329472899"
                     className="text-gray-600 hover:text-blue-600 transition-colors"
                   >
-                    +84 123 456 789
+                    +84 329 472 899
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex gap-4 mt-6">
-                <a 
-                  href="https://github.com/" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/thangpham0906/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 transition-colors"
                 >
                   <Github className="h-5 w-5" />
                 </a>
-                <a 
-                  href="https://linkedin.com/" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/in/thang-pham-118a6412b/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
                 >
@@ -104,7 +125,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          
+
           <div className="reveal" style={{ transitionDelay: "0.3s" }}>
             <Card className="shadow-sm">
               <form onSubmit={handleSubmit} className="p-6 space-y-4">
@@ -121,7 +142,7 @@ export default function Contact() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-navy-700 mb-1">
                     Email
@@ -136,7 +157,7 @@ export default function Contact() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-navy-700 mb-1">
                     Message
@@ -151,7 +172,7 @@ export default function Contact() {
                     required
                   />
                 </div>
-                
+
                 <Button type="submit" className="w-full">
                   Send Message
                 </Button>

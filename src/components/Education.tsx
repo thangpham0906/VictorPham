@@ -11,7 +11,7 @@ export default function Education() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm reveal">
+          <div className="bg-gray-100 border border-gray-100 rounded-lg p-6 shadow-sm reveal">
             <div className="flex items-center gap-4 mb-4">
               <div className="bg-blue-100 p-3 rounded-full">
                 <School className="text-blue-600 h-6 w-6" />

@@ -17,7 +17,7 @@ export default function Footer() {
           
           <div className="flex gap-4 mt-6 md:mt-0">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/thangpham0906" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-navy-700 p-2 rounded-full hover:bg-navy-600 transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="https://linkedin.com/" 
+              href="https://www.linkedin.com/in/thang-pham-118a6412b/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-navy-700 p-2 rounded-full hover:bg-navy-600 transition-colors"

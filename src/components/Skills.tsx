@@ -8,7 +8,7 @@ const skillCategories = [
   },
   {
     title: "Frameworks/CMS",
-    skills: ["React", "Magento", "Laravel", "WordPress"],
+    skills: ["Magento", "Laravel", "WordPress", "Next.js"],
   },
   {
     title: "Databases",
@@ -30,7 +30,7 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding bg-gray-50">
+    <section id="skills" className="section-padding bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-navy-800 mb-4">Skills</h2>
