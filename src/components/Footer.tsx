@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div>
             <a href="#home" className="text-xl font-bold">
-              <span className="text-blue-400">Thang</span>Pham
+              <span className="text-blue-400">Victor</span>Pham
             </a>
             <p className="mt-2 text-gray-400">Backend Developer</p>
           </div>

@@ -37,14 +37,14 @@ export default function Header() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 dark:bg-navy-800/90 shadow-md backdrop-blur-sm"
+          ? "bg-white/90 dark:bg-navy-400/90 shadow-md backdrop-blur-sm"
           : "bg-transparent"
       )}
     >
       <nav className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
         <div>
           <a href="#home" className="text-xl font-bold text-navy-800">
-            <span className="text-blue-600">Thang</span>Pham
+            <span className="text-blue-600">Victor</span>Pham
           </a>
         </div>
 
