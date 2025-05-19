@@ -29,11 +29,6 @@ export default function Contact() {
     // In a real app, you would handle form submission to a backend service here
     console.log("Form submitted:", formData);
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-
     emailjs
       .send(
         'service_34uy9vf',     // Your Service ID
@@ -47,7 +42,11 @@ export default function Contact() {
       )
       .then(
         (result) => {
-          console.log('Email sent successfully!');
+          console.log(result);
+          toast({
+            title: "Message sent!",
+            description: "Thank you for your message. I'll get back to you soon.",
+          });
         },
         (error) => {
           console.log('Failed to send email: ' + error.text);
